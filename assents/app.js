@@ -1,4 +1,4 @@
-// ===== JSON COM OS DADOS =====
+// json com os dados
 const dados = {
   "noticias": [
     {
@@ -94,7 +94,7 @@ const dados = {
   ]
 };
 
-// ===== DADOS DO ALUNO (preencha com os seus) =====
+// meus dados
 const aluno = {
   nome: "Seu Nome Completo",
   curso: "Sistemas de Informação - PUC Minas",
@@ -106,23 +106,22 @@ const aluno = {
   ]
 };
 
-// ===== FUNÇÃO AUXILIAR: formata a data (2026-11-01 -> 01/11/2026) =====
+//formatação da data
 function formatarData(data) {
   return new Date(data + "T00:00:00").toLocaleDateString("pt-BR");
 }
 
-// ===== SEÇÃO 1: CARROSSEL =====
+//carrosel (peguei no bootstrap)
 function montarCarrossel() {
   const area = document.getElementById("carrossel-itens");
-  if (!area) return; // se a página não tem carrossel, não faz nada
-
+  if (!area) return; 
   const destaques = dados.noticias.filter(function (n) {
     return n.destaque === true;
   });
 
   let html = "";
   destaques.forEach(function (n, i) {
-    const ativo = i === 0 ? "active" : ""; // o primeiro precisa ter "active"
+    const ativo = i === 0 ? "active" : ""; 
     html += `
       <div class="carousel-item ${ativo}">
         <a href="detalhe.html?id=${n.id}">
@@ -137,7 +136,7 @@ function montarCarrossel() {
   area.innerHTML = html;
 }
 
-// ===== SEÇÃO 2: CARDS =====
+// cards
 function montarCards() {
   const area = document.getElementById("lista-cards");
   if (!area) return;
@@ -166,7 +165,7 @@ function montarCards() {
   area.innerHTML = html;
 }
 
-// ===== SEÇÃO 3: ALUNO =====
+// aluno
 function montarAluno() {
   const area = document.getElementById("info-aluno");
   if (!area) return;
@@ -184,12 +183,12 @@ function montarAluno() {
     <div>${redes}</div>`;
 }
 
-// ===== PÁGINA DE DETALHE =====
+//detalhe.html
 function montarDetalhe() {
   const areaGeral = document.getElementById("detalhe-geral");
   if (!areaGeral) return; // só roda no detalhe.html
 
-  // pega o id da URL: detalhe.html?id=2
+  // id url
   const parametros = new URLSearchParams(window.location.search);
   const id = Number(parametros.get("id"));
 
@@ -207,7 +206,7 @@ function montarDetalhe() {
 
   document.title = noticia.titulo;
 
-  // SEÇÃO 1: informações gerais (imagem, título, categoria, data, autor, descrição, conteúdo)
+  //informação no geral
   areaGeral.innerHTML = `
     <div class="row g-4">
       <div class="col-12 col-md-5">
@@ -226,7 +225,7 @@ function montarDetalhe() {
       </div>
     </div>`;
 
-  // SEÇÃO 2: fotos vinculadas (foto + título)
+  //imagens mais titulo
   let fotos = "";
   noticia.fotos.forEach(function (f) {
     fotos += `
@@ -242,9 +241,6 @@ function montarDetalhe() {
   document.getElementById("detalhe-fotos").innerHTML = fotos;
 }
 
-// ===== EXECUTA TUDO =====
-// Cada função só faz algo se encontrar a área dela na página,
-// então o mesmo app.js serve para o index.html e o detalhe.html.
 montarCarrossel();
 montarCards();
 montarAluno();
