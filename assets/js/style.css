@@ -88,6 +88,11 @@ body {
   border-radius: 8px;
   background-color: #cfd6dd;
   min-height: 200px;
+  .card img.foto-album {
+  height: auto;
+  aspect-ratio: 1 / 1;   /* deixa as fotos quadradas, como capas de álbum */
+  object-fit: cover;
+}
 }
 .detalhe-info {
   background-color: #fff;

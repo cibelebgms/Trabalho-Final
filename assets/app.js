@@ -1,4 +1,4 @@
-// json com os dados
+// ===== JSON COM OS DADOS =====
 const dados = {
   "noticias": [
     {
@@ -33,17 +33,18 @@ const dados = {
     },
     {
       "id": 3,
-      "titulo": "Título da notícia 3",
-      "descricao": "Resumo curto da notícia 3.",
-      "conteudo": "Texto completo da notícia 3.",
-      "categoria": "Cultura",
+      "titulo": "Duran Duran e seus álbuns marcantes",
+      "descricao": "Conheça a banda britânica e três dos seus álbuns mais conhecidos.",
+      "conteudo": "O Duran Duran é uma banda britânica formada em Birmingham, na Inglaterra, em 1978. Nesta matéria você confere três álbuns da banda: Duran Duran (1981), Rio (1982) e Notorious (1986). Clique nas capas abaixo para conhecer cada um.",
+      "categoria": "Música",
       "autor": "Seu Nome",
       "destaque": true,
       "data": "2026-11-03",
-      "imagem_principal": "assets/img/noticia3.jpg",
+      "imagem_principal": "assets/img/duran-duran-banda.jpg",
       "fotos": [
-        { "id": 1, "titulo": "Foto 1 da notícia 3", "imagem": "assets/img/fotos/foto3a.jpg" },
-        { "id": 2, "titulo": "Foto 2 da notícia 3", "imagem": "assets/img/fotos/foto3b.jpg" }
+        { "id": 1, "titulo": "Duran Duran (1981)", "imagem": "assets/img/fotos/album-duran-duran.jpg" },
+        { "id": 2, "titulo": "Rio (1982)", "imagem": "assets/img/fotos/album-rio.jpg" },
+        { "id": 3, "titulo": "Notorious (1986)", "imagem": "assets/img/fotos/album-notorious.jpg" }
       ]
     },
     {
@@ -94,7 +95,7 @@ const dados = {
   ]
 };
 
-// meus dados
+// ===== DADOS DO ALUNO (preencha com os seus) =====
 const aluno = {
   nome: "Seu Nome Completo",
   curso: "Sistemas de Informação - PUC Minas",
@@ -106,22 +107,23 @@ const aluno = {
   ]
 };
 
-//formatação da data
+// ===== FUNÇÃO AUXILIAR: formata a data (2026-11-01 -> 01/11/2026) =====
 function formatarData(data) {
   return new Date(data + "T00:00:00").toLocaleDateString("pt-BR");
 }
 
-//carrosel (peguei no bootstrap)
+// ===== SEÇÃO 1: CARROSSEL =====
 function montarCarrossel() {
   const area = document.getElementById("carrossel-itens");
-  if (!area) return; 
+  if (!area) return; // se a página não tem carrossel, não faz nada
+
   const destaques = dados.noticias.filter(function (n) {
     return n.destaque === true;
   });
 
   let html = "";
   destaques.forEach(function (n, i) {
-    const ativo = i === 0 ? "active" : ""; 
+    const ativo = i === 0 ? "active" : ""; // o primeiro precisa ter "active"
     html += `
       <div class="carousel-item ${ativo}">
         <a href="detalhe.html?id=${n.id}">
@@ -136,7 +138,7 @@ function montarCarrossel() {
   area.innerHTML = html;
 }
 
-// cards
+// ===== SEÇÃO 2: CARDS =====
 function montarCards() {
   const area = document.getElementById("lista-cards");
   if (!area) return;
@@ -165,7 +167,7 @@ function montarCards() {
   area.innerHTML = html;
 }
 
-// aluno
+// ===== SEÇÃO 3: ALUNO =====
 function montarAluno() {
   const area = document.getElementById("info-aluno");
   if (!area) return;
@@ -183,12 +185,12 @@ function montarAluno() {
     <div>${redes}</div>`;
 }
 
-//detalhe.html
+// ===== PÁGINA DE DETALHE =====
 function montarDetalhe() {
   const areaGeral = document.getElementById("detalhe-geral");
   if (!areaGeral) return; // só roda no detalhe.html
 
-  // id url
+  // pega o id da URL: detalhe.html?id=2
   const parametros = new URLSearchParams(window.location.search);
   const id = Number(parametros.get("id"));
 
@@ -206,7 +208,7 @@ function montarDetalhe() {
 
   document.title = noticia.titulo;
 
-  //informação no geral
+  // SEÇÃO 1: informações gerais (imagem, título, categoria, data, autor, descrição, conteúdo)
   areaGeral.innerHTML = `
     <div class="row g-4">
       <div class="col-12 col-md-5">
@@ -225,13 +227,13 @@ function montarDetalhe() {
       </div>
     </div>`;
 
-  //imagens mais titulo
+  // SEÇÃO 2: fotos vinculadas (foto + título)
   let fotos = "";
   noticia.fotos.forEach(function (f) {
     fotos += `
       <div class="col">
         <div class="card h-100">
-          <img src="${f.imagem}" class="card-img-top" alt="${f.titulo}">
+                    <img src="${f.imagem}" class="card-img-top foto-album" alt="${f.titulo}">
           <div class="card-body">
             <h6 class="card-title mb-0">${f.titulo}</h6>
           </div>
@@ -241,6 +243,9 @@ function montarDetalhe() {
   document.getElementById("detalhe-fotos").innerHTML = fotos;
 }
 
+// ===== EXECUTA TUDO =====
+// Cada função só faz algo se encontrar a área dela na página,
+// então o mesmo app.js serve para o index.html e o detalhe.html.
 montarCarrossel();
 montarCards();
 montarAluno();
