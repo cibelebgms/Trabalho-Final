@@ -10,7 +10,7 @@ O site possui uma página inicial com carrossel de destaques e cards de notícia
 
 ![Página inicial do Central News](img/readme.png)
 
-## Informações da desenvolvedora
+## Informações Estudantil
 
 - **Nome:** Cibele Batista Gomes
 - **Curso:** Sistemas de Informação
