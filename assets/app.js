@@ -1,252 +1,154 @@
-// ===== JSON COM OS DADOS =====
-const dados = {
-  "noticias": [
-    {
-      "id": 1,
-      "titulo": "Título da notícia 1",
-      "descricao": "Resumo curto da notícia 1, aparece no carrossel e no card.",
-      "conteudo": "Texto completo da notícia 1. Escreva aqui o conteúdo da matéria, em um ou mais parágrafos.",
-      "categoria": "Tecnologia",
-      "autor": "Seu Nome",
-      "destaque": true,
-      "data": "2026-11-01",
-      "imagem_principal": "assets/img/noticia1.jpg",
-      "fotos": [
-        { "id": 1, "titulo": "Foto 1 da notícia 1", "imagem": "assets/img/fotos/foto1a.jpg" },
-        { "id": 2, "titulo": "Foto 2 da notícia 1", "imagem": "assets/img/fotos/foto1b.jpg" }
-      ]
-    },
-    {
-      "id": 2,
-      "titulo": "Título da notícia 2",
-      "descricao": "Resumo curto da notícia 2.",
-      "conteudo": "Texto completo da notícia 2.",
-      "categoria": "Esportes",
-      "autor": "Seu Nome",
-      "destaque": true,
-      "data": "2026-11-02",
-      "imagem_principal": "assets/img/noticia2.jpg",
-      "fotos": [
-        { "id": 1, "titulo": "Foto 1 da notícia 2", "imagem": "assets/img/fotos/foto2a.jpg" },
-        { "id": 2, "titulo": "Foto 2 da notícia 2", "imagem": "assets/img/fotos/foto2b.jpg" }
-      ]
-    },
-    {
-      "id": 3,
-      "titulo": "Duran Duran e seus álbuns marcantes",
-      "descricao": "Conheça a banda britânica e três dos seus álbuns mais conhecidos.",
-      "conteudo": "O Duran Duran é uma banda britânica formada em Birmingham, na Inglaterra, em 1978. Nesta matéria você confere três álbuns da banda: Duran Duran (1981), Rio (1982) e Notorious (1986). Clique nas capas abaixo para conhecer cada um.",
-      "categoria": "Música",
-      "autor": "Seu Nome",
-      "destaque": true,
-      "data": "2026-11-03",
-      "imagem_principal": "assets/img/duran-duran-banda.jpg",
-      "fotos": [
-        { "id": 1, "titulo": "Duran Duran (1981)", "imagem": "assets/img/fotos/album-duran-duran.jpg" },
-        { "id": 2, "titulo": "Rio (1982)", "imagem": "assets/img/fotos/album-rio.jpg" },
-        { "id": 3, "titulo": "Notorious (1986)", "imagem": "assets/img/fotos/album-notorious.jpg" }
-      ]
-    },
-    {
-      "id": 4,
-      "titulo": "Título da notícia 4",
-      "descricao": "Resumo curto da notícia 4.",
-      "conteudo": "Texto completo da notícia 4.",
-      "categoria": "Ciência",
-      "autor": "Seu Nome",
-      "destaque": false,
-      "data": "2026-11-04",
-      "imagem_principal": "assets/img/noticia4.jpg",
-      "fotos": [
-        { "id": 1, "titulo": "Foto 1 da notícia 4", "imagem": "assets/img/fotos/foto4a.jpg" },
-        { "id": 2, "titulo": "Foto 2 da notícia 4", "imagem": "assets/img/fotos/foto4b.jpg" }
-      ]
-    },
-    {
-      "id": 5,
-      "titulo": "Título da notícia 5",
-      "descricao": "Resumo curto da notícia 5.",
-      "conteudo": "Texto completo da notícia 5.",
-      "categoria": "Economia",
-      "autor": "Seu Nome",
-      "destaque": false,
-      "data": "2026-11-05",
-      "imagem_principal": "assets/img/noticia5.jpg",
-      "fotos": [
-        { "id": 1, "titulo": "Foto 1 da notícia 5", "imagem": "assets/img/fotos/foto5a.jpg" },
-        { "id": 2, "titulo": "Foto 2 da notícia 5", "imagem": "assets/img/fotos/foto5b.jpg" }
-      ]
-    },
-    {
-      "id": 6,
-      "titulo": "Título da notícia 6",
-      "descricao": "Resumo curto da notícia 6.",
-      "conteudo": "Texto completo da notícia 6.",
-      "categoria": "Viagens",
-      "autor": "Seu Nome",
-      "destaque": false,
-      "data": "2026-11-06",
-      "imagem_principal": "assets/img/noticia6.jpg",
-      "fotos": [
-        { "id": 1, "titulo": "Foto 1 da notícia 6", "imagem": "assets/img/fotos/foto6a.jpg" },
-        { "id": 2, "titulo": "Foto 2 da notícia 6", "imagem": "assets/img/fotos/foto6b.jpg" }
-      ]
-    }
-  ]
-};
 
-// ===== DADOS DO ALUNO (preencha com os seus) =====
-const aluno = {
-  nome: "Seu Nome Completo",
-  curso: "Sistemas de Informação - PUC Minas",
-  sobre: "Escreva aqui um parágrafo sobre você.",
-  autoria: "Site criado por mim para o TP1 de Web Front-End.",
-  redes: [
-    { nome: "GitHub", link: "https://github.com/cibelebgms" },
-    { nome: "LinkedIn", link: "#" }
-  ]
-};
+const noticias = [
+  {
+    id: 1,
+    titulo: "A tecnologia que nos ajuda a enxergar mais longe",
+    categoria: "Tecnologia",
+    descricao: "Como os telescópios modernos ajudam a humanidade a explorar o universo.",
+    imagem: "img/tec1.png",
+    paragrafos: [
+      "Desde os primeiros telescópios, a humanidade busca maneiras de observar o que existe além do nosso planeta. Com o avanço da tecnologia, esses equipamentos se tornaram cada vez mais modernos e capazes de registrar imagens de objetos extremamente distantes.",
+      "Os telescópios funcionam utilizando lentes ou espelhos que captam e concentram a luz. Quanto maior a capacidade de captar essa luz, maiores são as possibilidades de observar estrelas, planetas e galáxias que não conseguimos enxergar a olho nu.",
+      "Um dos exemplos mais conhecidos é o Telescópio Espacial James Webb, que permite aos cientistas estudar galáxias distantes, atmosferas de outros planetas e diferentes fenômenos espaciais.",
+      "Essas descobertas mostram como a tecnologia é importante para a ciência. Cada nova observação pode ajudar a responder perguntas sobre a origem do universo e o nosso lugar nele."
+    ],
+    fotos: ["img/tec2.png", "img/tec3.png"]
+  },
+  {
+    id: 2,
+    titulo: "O esporte que move multidões",
+    categoria: "Esportes",
+    descricao: "A importância do esporte para a saúde, a convivência e a sociedade.",
+    imagem: "img/esp1.png",
+    paragrafos: [
+      "O esporte faz parte da vida de milhões de pessoas e está presente em diferentes culturas. Futebol, vôlei, basquete, corrida e tantas outras modalidades movimentam comunidades, despertam emoções e aproximam pessoas.",
+      "Além do entretenimento, a prática esportiva oferece benefícios importantes para a saúde. A atividade física regular contribui para o fortalecimento dos músculos e ossos, melhora a disposição e também pode favorecer a saúde mental.",
+      "O esporte também possui um papel social. Em escolas e projetos comunitários, ele pode estimular o trabalho em equipe, o respeito às diferenças, a disciplina e a convivência.",
+      "Mais do que vencer competições, praticar esportes representa uma oportunidade de desenvolver habilidades, superar limites e construir relações. Por isso, incentivar o acesso ao esporte é importante em todas as idades."
+    ],
+    fotos: ["img/esp2.png", "img/esp3.png"]
+  },
+  {
+    id: 3,
+    titulo: "Duran Duran e seus álbuns marcantes",
+    categoria: "Música",
+    descricao: "A trajetória de uma das bandas mais marcantes da música britânica.",
+    imagem_principal: "img/notorius.png",
+    paragrafos: [
+      "Formada no Reino Unido no final da década de 1970, a banda Duran Duran conquistou reconhecimento internacional e se tornou um dos grandes nomes da música dos anos 1980. Seu estilo misturava pop, rock, elementos eletrônicos e uma identidade visual muito característica.",
+      "Entre seus trabalhos mais conhecidos estão os álbuns Rio, Seven and the Ragged Tiger e Notorious. Essas produções ajudaram a construir a identidade musical do grupo e marcaram diferentes momentos de sua trajetória.",
+      "Lançado em 1986, Notorious apresentou uma sonoridade com forte influência do funk e contou com a produção de Nile Rodgers. A faixa que dá nome ao álbum se destacou nas paradas musicais e demonstrou a capacidade da banda de experimentar novos caminhos.",
+      "Mesmo depois de décadas, Duran Duran continua sendo lembrada por suas músicas, apresentações e influência na cultura pop. Sua trajetória demonstra como a música pode atravessar gerações e continuar conquistando novos públicos."
+    ],
+    fotos: []
+  },
+  {
 
-// ===== FUNÇÃO AUXILIAR: formata a data (2026-11-01 -> 01/11/2026) =====
-function formatarData(data) {
-  return new Date(data + "T00:00:00").toLocaleDateString("pt-BR");
+    id: 4,
+    titulo: "Economia no dia a dia",
+    categoria: "Economia",
+    descricao: "Como o planejamento financeiro pode ajudar nas decisões cotidianas.",
+    imagem_principal: "img/eco1.png",
+    paragrafos: [
+      "A economia está presente em praticamente todas as decisões do cotidiano. O preço dos alimentos, o valor do transporte, as contas de casa e até mesmo uma compra pela internet fazem parte da relação das pessoas com o dinheiro.",
+      "Nesse contexto, a educação financeira se torna uma ferramenta importante. Ela ajuda a compreender os ganhos, organizar despesas, estabelecer prioridades e tomar decisões mais conscientes.",
+      "Uma das primeiras atitudes para organizar as finanças é elaborar um orçamento pessoal. Anotar quanto dinheiro entra e quanto é gasto permite identificar despesas desnecessárias e planejar melhor os próximos meses.",
+      "Também é importante desenvolver hábitos de consumo consciente, evitar compras por impulso e compreender os riscos do uso inadequado do crédito. Pequenas atitudes podem fazer diferença na organização financeira.",
+      "Ter conhecimento sobre dinheiro não significa apenas economizar. Significa desenvolver autonomia para fazer escolhas, lidar com imprevistos e planejar objetivos para o futuro."
+    ],
+    fotos: ["img/eco2.png", "img/eco3.png"]
+  },
+  {
+    id: 5,
+    titulo: "Viajar: destinos para conhecer",
+    categoria: "Viagens",
+    descricao: "Paisagens e lugares que inspiram quem gosta de explorar o mundo.",
+    imagem: "img/viag1.png",
+    paragrafos: [
+      "Conhecer novos lugares é uma das experiências que mais despertam a curiosidade das pessoas. Cada destino oferece paisagens, costumes, sabores e histórias que ajudam a compreender diferentes culturas.",
+      "O turismo também possui importância econômica. Hotéis, restaurantes, transportes, guias e pequenos comércios podem gerar oportunidades de trabalho e renda para as comunidades que recebem visitantes.",
+      "Entretanto, viajar também exige responsabilidade. O turismo sustentável busca respeitar o meio ambiente, preservar o patrimônio histórico e valorizar os costumes das populações locais.",
+      "Escolher destinos, conhecer a cultura da região e respeitar os espaços visitados são atitudes que tornam a experiência mais consciente. Assim, viajar deixa de ser apenas uma atividade de lazer e se transforma em uma oportunidade de aprendizado e troca cultural."
+    ],
+    fotos: ["img/viag2.png", "img/viag3.png"]
+  },
+  {
+    id: 6,
+    titulo: "Educação: os desafios e as oportunidades do ensino no Brasil",
+    categoria: "Educação",
+    descricao: "Os caminhos para uma educação mais acessível, inclusiva e de qualidade.",
+    imagem_principal: "img/edu1.png",
+    paragrafos: [
+      "A educação é um dos principais instrumentos de transformação social. Por meio dela, crianças, jovens e adultos desenvolvem conhecimentos, habilidades e oportunidades que podem contribuir para a construção de um futuro melhor.",
+      "Apesar de sua importância, o ensino brasileiro ainda enfrenta desafios. As diferenças de infraestrutura, acesso à tecnologia e qualidade da aprendizagem demonstram que nem todos os estudantes possuem as mesmas condições para aprender e permanecer na escola.",
+      "Outro ponto importante é a desigualdade educacional entre diferentes regiões e instituições. Garantir que todos tenham acesso a um ensino de qualidade exige investimentos, formação de professores, melhores estruturas e políticas públicas eficientes.",
+      "Ao mesmo tempo, novas tecnologias oferecem oportunidades para transformar a aprendizagem. Plataformas digitais, recursos interativos e ferramentas de inteligência artificial podem ampliar o acesso à informação e apoiar estudantes e professores, desde que utilizados de maneira responsável.",
+      "Construir uma educação mais inclusiva depende da participação de toda a sociedade. Valorizar os profissionais da educação, combater as desigualdades e garantir oportunidades de aprendizagem são passos fundamentais para transformar a realidade do país."
+    ],
+    fotos: ["img/edu2.png", "img/edu3.png"]
+  }
+];
+
+function formatarData(d) {
+  return new Date(d + "T00:00:00").toLocaleDateString("pt-BR");
 }
 
-// ===== SEÇÃO 1: CARROSSEL =====
-function montarCarrossel() {
-  const area = document.getElementById("carrossel-itens");
-  if (!area) return; // se a página não tem carrossel, não faz nada
+/*id cards"*/
+const parametros = new URLSearchParams(window.location.search);
+const id = Number(parametros.get("id"));
 
-  const destaques = dados.noticias.filter(function (n) {
-    return n.destaque === true;
-  });
+/*abrindo ncia*/
+const noticia = noticias.find(n => n.id === id);
 
-  let html = "";
-  destaques.forEach(function (n, i) {
-    const ativo = i === 0 ? "active" : ""; // o primeiro precisa ter "active"
-    html += `
-      <div class="carousel-item ${ativo}">
-        <a href="detalhe.html?id=${n.id}">
-          <img src="${n.imagem_principal}" class="d-block w-100" alt="${n.titulo}">
-        </a>
-        <div class="carousel-caption">
-          <h5><a href="detalhe.html?id=${n.id}">${n.titulo}</a></h5>
-          <p>${n.descricao}</p>
+if (noticia) {
+
+  /*conteudo*/
+  document.getElementById("detalhe-geral").innerHTML = `
+    <div class="row g-4">
+      <div class="col-12">
+        <img src="${noticia.imagem || noticia.imagem_principal}" class="detalhe-imagem" alt="${noticia.titulo}">
+      </div>
+
+      <div class="col-12">
+        <div class="detalhe-info">
+          <span class="badge bg-secondary mb-3">${noticia.categoria}</span>
+
+          <h2>${noticia.titulo}</h2>
+
+          <p class="detalhe-meta">${formatarData(noticia.data)}</p>
+
+          <p><strong>${noticia.descricao}</strong></p>
+
+          ${noticia.paragrafos.map(p => `<p>${p}</p>`).join("")}
         </div>
-      </div>`;
-  });
-  area.innerHTML = html;
-}
+      </div>
+    </div>
+  `;
 
-// ===== SEÇÃO 2: CARDS =====
-function montarCards() {
-  const area = document.getElementById("lista-cards");
-  if (!area) return;
+  /*fts*s*/
+  let htmlFotos = "";
 
-  let html = "";
-  dados.noticias.forEach(function (n) {
-    html += `
+  noticia.fotos.forEach(foto => {
+    htmlFotos += `
       <div class="col">
         <div class="card h-100">
-          <a href="detalhe.html?id=${n.id}">
-            <img src="${n.imagem_principal}" class="card-img-top" alt="${n.titulo}">
-          </a>
-          <div class="card-body">
-            <span class="badge bg-secondary mb-2">${n.categoria}</span>
-            <h5 class="card-title">
-              <a href="detalhe.html?id=${n.id}">${n.titulo}</a>
-            </h5>
-            <p class="card-text">${n.descricao}</p>
-          </div>
-          <div class="card-footer">
-            <small class="text-muted">${formatarData(n.data)}</small>
-          </div>
+          <img src="${foto}" class="card-img-top foto-album" alt="${noticia.titulo}">
         </div>
-      </div>`;
-  });
-  area.innerHTML = html;
-}
-
-// ===== SEÇÃO 3: ALUNO =====
-function montarAluno() {
-  const area = document.getElementById("info-aluno");
-  if (!area) return;
-
-  let redes = "";
-  aluno.redes.forEach(function (r) {
-    redes += `<a href="${r.link}" target="_blank" class="btn btn-outline-primary btn-sm me-2">${r.nome}</a>`;
+      </div>
+    `;
   });
 
-  area.innerHTML = `
-    <h4>${aluno.nome}</h4>
-    <p class="text-muted">${aluno.curso}</p>
-    <p><strong>Sobre mim:</strong> ${aluno.sobre}</p>
-    <p><strong>Autoria:</strong> ${aluno.autoria}</p>
-    <div>${redes}</div>`;
-}
+  document.getElementById("detalhe-fotos").innerHTML = htmlFotos;
 
-// ===== PÁGINA DE DETALHE =====
-function montarDetalhe() {
-  const areaGeral = document.getElementById("detalhe-geral");
-  if (!areaGeral) return; // só roda no detalhe.html
-
-  // pega o id da URL: detalhe.html?id=2
-  const parametros = new URLSearchParams(window.location.search);
-  const id = Number(parametros.get("id"));
-
-  // procura a notícia com esse id
-  const noticia = dados.noticias.find(function (n) {
-    return n.id === id;
-  });
-
-  // se não achar, mostra aviso
-  if (!noticia) {
-    areaGeral.innerHTML = `<div class="alert alert-warning">Notícia não encontrada.</div>`;
-    document.getElementById("detalhe-fotos").innerHTML = "";
-    return;
+  if (noticia.fotos.length === 0) {
+    document.querySelector("#detalhe-fotos").parentElement.style.display = "none";
   }
 
-  document.title = noticia.titulo;
+} else {
+  document.getElementById("detalhe-geral").innerHTML = `
+    <h2>Notícia não encontrada.</h2>
+    <p>Volte para a página inicial e escolha outra notícia.</p>
+  `;
 
-  // SEÇÃO 1: informações gerais (imagem, título, categoria, data, autor, descrição, conteúdo)
-  areaGeral.innerHTML = `
-    <div class="row g-4">
-      <div class="col-12 col-md-5">
-        <img src="${noticia.imagem_principal}" class="detalhe-imagem" alt="${noticia.titulo}">
-      </div>
-      <div class="col-12 col-md-7">
-        <div class="detalhe-info">
-          <span class="badge bg-secondary mb-2">${noticia.categoria}</span>
-          <h1 class="h3">${noticia.titulo}</h1>
-          <p class="detalhe-meta">
-            Por <strong>${noticia.autor}</strong> • ${formatarData(noticia.data)}
-          </p>
-          <p class="fw-bold">${noticia.descricao}</p>
-          <p>${noticia.conteudo}</p>
-        </div>
-      </div>
-    </div>`;
-
-  // SEÇÃO 2: fotos vinculadas (foto + título)
-  let fotos = "";
-  noticia.fotos.forEach(function (f) {
-    fotos += `
-      <div class="col">
-        <div class="card h-100">
-                    <img src="${f.imagem}" class="card-img-top foto-album" alt="${f.titulo}">
-          <div class="card-body">
-            <h6 class="card-title mb-0">${f.titulo}</h6>
-          </div>
-        </div>
-      </div>`;
-  });
-  document.getElementById("detalhe-fotos").innerHTML = fotos;
+  document.getElementById("detalhe-fotos").innerHTML = "";
 }
-
-// ===== EXECUTA TUDO =====
-// Cada função só faz algo se encontrar a área dela na página,
-// então o mesmo app.js serve para o index.html e o detalhe.html.
-montarCarrossel();
-montarCards();
-montarAluno();
-montarDetalhe();

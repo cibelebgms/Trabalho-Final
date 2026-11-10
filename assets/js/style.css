@@ -1,4 +1,4 @@
-/* ===== CORES (troque aqui pelas do seu site) ===== */
+/* tons*/
 :root {
   --cor-principal: #1f3a5f;
   --cor-destaque: #e8a317;
@@ -12,7 +12,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ===== CABEÇALHO ===== */
+/*cabeçlho*/
 .cabecalho {
   background-color: var(--cor-principal);
 }
@@ -21,7 +21,7 @@ body {
   font-size: 1.4rem;
 }
 
-/* ===== SEÇÕES ===== */
+/* seçoes */
 .secao {
   padding-top: 40px;
   padding-bottom: 20px;
@@ -33,11 +33,11 @@ body {
   margin-bottom: 24px;
 }
 
-/* ===== CARROSSEL ===== */
+/*carrossel*/
 .carousel-item img {
   height: 420px;
   object-fit: cover;
-  background-color: #cfd6dd; /* aparece enquanto você não colocar a foto */
+  background-color: #cfd6dd;
 }
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.55);
@@ -52,7 +52,7 @@ body {
   text-decoration: underline;
 }
 
-/* ===== CARDS ===== */
+/*cards*/
 .card img {
   height: 200px;
   object-fit: cover;
@@ -72,7 +72,7 @@ body {
   transform: translateY(-4px);
 }
 
-/* ===== ALUNO ===== */
+/*informação*/
 .caixa-aluno {
   background-color: #fff;
   border-radius: 8px;
@@ -80,7 +80,7 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== DETALHE ===== */
+/* de detalhes*/
 .detalhe-imagem {
   width: 100%;
   max-height: 420px;
@@ -88,11 +88,6 @@ body {
   border-radius: 8px;
   background-color: #cfd6dd;
   min-height: 200px;
-  .card img.foto-album {
-  height: auto;
-  aspect-ratio: 1 / 1;   /* deixa as fotos quadradas, como capas de álbum */
-  object-fit: cover;
-}
 }
 .detalhe-info {
   background-color: #fff;
@@ -104,8 +99,13 @@ body {
   color: #666;
   font-size: 0.95rem;
 }
+.card img.foto-album {
+  height: auto;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;
+}
 
-/* ===== RODAPÉ ===== */
+/*rodape*/
 .rodape {
   background-color: var(--cor-principal);
   color: #fff;
@@ -114,7 +114,7 @@ body {
   margin-top: 40px;
 }
 
-/* ===== RESPONSIVIDADE (media queries) ===== */
+/* media*/
 
 /* Tablet */
 @media (max-width: 992px) {
@@ -123,13 +123,13 @@ body {
   }
 }
 
-/* Celular */
+/* Cel */
 @media (max-width: 576px) {
   .carousel-item img {
     height: 220px;
   }
   .carousel-caption {
-    position: static;      /* legenda vai para baixo da imagem */
+    position: static;
     background-color: var(--cor-principal);
     border-radius: 0;
   }
